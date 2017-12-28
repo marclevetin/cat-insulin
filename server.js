@@ -15,14 +15,14 @@ const handlebars = require("express-handlebars");
 app.engine("handlebars", handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.get('/', (req, res)=>{
-  res.render('index',{});
-  console.log('hi mom');
-})
+// app.get('/', (req, res)=>{
+//   res.render('index',{});
+//   console.log('hi mom');
+// })
 
 // routes
-const routes = require('./controllers/catInsulin.js')
+const routes = require('./controllers/dosagesController.js')
 
-// app.use("/", routes);
+app.use("/", routes);
 
 app.listen(port, ()=>console.log(`listening on ${port}`))
