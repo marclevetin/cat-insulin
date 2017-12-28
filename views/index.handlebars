@@ -2,22 +2,22 @@
 <h2>
   Record a dosage
 </h2>
-<form>
+<form action="/api/dosages" method="post">
   <div class="form-row">
     <div class="form-group col">
       <label for="inputEmail4">Date</label>
-      <input type="email" class="form-control" id="date" placeholder="Date">
+      <input type="date" name="date" class="form-control" id="date" placeholder="Date">
     </div>
     <div class="form-group col">
       <label for="inputPassword4">Time</label>
-      <input type="password" class="form-control" id="time" placeholder="Time">
+      <input type="time" name="time" class="form-control" id="time" placeholder="Time">
     </div>
     <div class="form-group col">
       <label for="inputPassword4">Dosage</label>
-      <input type="password" class="form-control" id="dosage" placeholder="Dosage">
+      <input type="number" name="dosage" class="form-control" id="dosage" placeholder="Dosage">
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+  <button type="submit" class="btn btn-primary">Record dosage</button>
 </form>
 <h2>Recent Dosages</h2>
 <p>
