@@ -12,13 +12,14 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 const handlebars = require("express-handlebars");
 
-app.engine("handlebars", handlebars({ defaultLayout: "main" }));
+app.engine("handlebars", handlebars({
+  defaultLayout: "main" ,
+  helpers: {
+    log: (thing) => console.log(thing),
+    incrementNumber: (number) => number + 1
+  }
+}));
 app.set("view engine", "handlebars");
-
-// app.get('/', (req, res)=>{
-//   res.render('index',{});
-//   console.log('hi mom');
-// })
 
 // routes
 const routes = require('./controllers/dosagesController.js')
