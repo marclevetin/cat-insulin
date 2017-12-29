@@ -9,23 +9,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>MM/DD/YYYY</td>
-      <td>9am</td>
-      <td>4 units</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>MM/DD/YYYY</td>
-      <td>9am</td>
-      <td>4 units</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>MM/DD/YYYY</td>
-      <td>9am</td>
-      <td>4 units</td>
-    </tr>
+    {{#each dosages}}
+      {{> dosages/dosage-row }}
+    {{/each}}
   </tbody>
 </table>
