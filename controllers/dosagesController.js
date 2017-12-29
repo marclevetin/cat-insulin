@@ -23,16 +23,6 @@ router.post("/api/dosages", function(req, res) {
   });
 });
 
-router.get("/alldosages", function(req, res) {
-  dosage.all(function(data) {
-    const handlebarsObject = {
-      dosages: data
-    };
-    console.log(handlebarsObject);
-    res.render("alldosages", handlebarsObject);
-  });
-});
-
 router.delete("/api/dosages/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
@@ -46,4 +36,13 @@ router.delete("/api/dosages/:id", function(req, res) {
   });
 });
 
+router.get("/alldosages", function(req, res) {
+  dosage.all(function(data) {
+    const handlebarsObject = {
+      dosages: data
+    };
+    console.log(handlebarsObject);
+    res.render("alldosages", handlebarsObject);
+  });
+});
 module.exports = router;
