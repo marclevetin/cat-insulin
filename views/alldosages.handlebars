@@ -1,12 +1,7 @@
 <h1>All dosages</h1>
-<table class="table">
+<table class="table table-hover">
   <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Date</th>
-      <th scope="col">Time</th>
-      <th scope="col">Dosage</th>
-    </tr>
+    {{> dosages/dosage-table-header}}
   </thead>
   <tbody>
     {{#each dosages}}

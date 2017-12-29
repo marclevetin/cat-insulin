@@ -23,6 +23,19 @@ router.post("/api/dosages", function(req, res) {
   });
 });
 
+router.delete("/api/dosages/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  dosage.delete(condition, function(result) {
+    if (result.affectedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+
 router.get("/alldosages", function(req, res) {
   dosage.all(function(data) {
     const handlebarsObject = {
@@ -32,5 +45,4 @@ router.get("/alldosages", function(req, res) {
     res.render("alldosages", handlebarsObject);
   });
 });
-
 module.exports = router;
